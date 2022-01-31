@@ -7,12 +7,12 @@ on:
 jobs:
   test:
     name: Testing Stage
-    uses: marc0tjevp/jobs-test/.github/workflows/test.yml@master
+    uses: marc0tjevp/jobs-test/.github/workflows/stages/test.yml@master
 
   build:
     name: Building Stage
     needs: test
-    uses: marc0tjevp/jobs-test/.github/workflows/build.yml@master
+    uses: marc0tjevp/jobs-test/.github/workflows/stages/build.yml@master
 
   deploy:
     name: Deploy to production
