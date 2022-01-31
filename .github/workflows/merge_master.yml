@@ -17,3 +17,4 @@ jobs:
   deploy:
     name: Deploy to production
     needs: [test, build]
+    uses: marc0tjevp/jobs-test/.github/workflows/deploy.yml@master
