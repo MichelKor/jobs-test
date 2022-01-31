@@ -1,8 +1,9 @@
-name: Deploy Stage
+name: Deploy Production Stage
 
 on:
   workflow_run:
     workflows: [Build Stage]
+    branches: [main]
     types:
       - completed
       
