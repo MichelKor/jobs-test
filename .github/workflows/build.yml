@@ -2,7 +2,7 @@ name: Building Stage
 
 on:
   workflow_run:
-    workflows: [Test Stage]
+    workflows: [Testing Stage]
     types:
       - completed
 
