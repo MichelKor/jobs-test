@@ -6,10 +6,10 @@ name: Building Stage
 #     types:
 #       - completed
 
+on:
   workflow_dispatch:
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +27,7 @@ jobs:
           echo Build VO Docent
           echo Build VO Leerling
           echo Build Readiant Player
-          
+
   build-external:
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +36,7 @@ jobs:
         run: |
           echo Build Bestelhulp
           echo Build Smart Life
-          
+
   build-internal:
     runs-on: ubuntu-latest
     steps:
