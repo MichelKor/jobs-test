@@ -1,0 +1,47 @@
+name: Building Stage
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          echo Build Apis
+          echo Build Beheer
+          echo Build CMS
+          echo Build Mob Grammar
+          echo Build Mob Grooveme
+          echo Build Mob Spelling
+          echo Build PO Leerkracht
+          echo Build PO Student
+          echo Build VO Docent
+          echo Build VO Leerling
+          echo Build Readiant Player
+          
+  build-external:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build External
+        run: |
+          echo Build Bestelhulp
+          echo Build Smart Life
+          
+  build-internal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Interal
+        run: |
+          echo Build Package Monitor
