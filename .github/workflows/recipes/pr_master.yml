@@ -1,0 +1,15 @@
+name: Pull Request to Master
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    name: Testing Stage
+    uses: marc0tjevp/jobs-test/.github/workflows/test.yml@master
+
+  test:
+    name: Building Stage
+    needs: test
+    uses: marc0tjevp/jobs-test/.github/workflows/build.yml@master
