@@ -5,8 +5,16 @@ on:
 
 jobs:
   code-quality:
-    name: Code Quality
-    uses: marc0tjevp/jobs-test/.github/workflows/test-cq.yml@master
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Quality
+        run: |
+          echo Shared Lint
+          echo Tests Lint
+          echo Apis Lint
+          echo Apps Lint
 
   unit-test:
     runs-on: ubuntu-latest
