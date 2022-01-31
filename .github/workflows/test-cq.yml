@@ -1,3 +1,4 @@
+# Runs code quality checks
 name: Testing Stage - Code Quality
 
 on:
