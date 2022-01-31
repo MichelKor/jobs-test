@@ -1,11 +1,5 @@
 name: Building Stage
 
-# on:
-#   workflow_run:
-#     workflows: [Testing Stage]
-#     types:
-#       - completed
-
 on:
   workflow_call:
 
