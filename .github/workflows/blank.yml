@@ -2,9 +2,7 @@
 
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
   pull_request:
@@ -13,24 +11,80 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+
+  code-quality:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Code Quality
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Shared Lint
+          echo Tests Lint
+          echo Apis Lint
+          echo Apps Lint
+        
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Unit Tests
+        run: |
+          echo Apis Unit Tests
+          echo Apps Unit Tests
+          echo Shared Unit Tests
+          
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Coverage
+        run: |
+          echo Apis Coverage
+          echo Apps Coverage
+          echo Shared Coverage          
+          
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          echo Build Apis
+          echo Build Beheer
+          echo Build CMS
+          echo Build Mob Grammar
+          echo Build Mob Grooveme
+          echo Build Mob Spelling
+          echo Build PO Leerkracht
+          echo Build PO Student
+          echo Build VO Docent
+          echo Build VO Leerling
+          echo Build Readiant Player
+          
+  build-external:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build External
+        run: |
+          echo Build Bestelhulp
+          echo Build Smart Life
+          
+  build-interal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Interal
+        run: |
+          echo Build Package Monitor
+          
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: |
+          echo Apis Unit Tests
+          
