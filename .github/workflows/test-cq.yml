@@ -1,0 +1,37 @@
+name: Testing Stage - Code Quality
+
+on:
+  workflow_call:
+
+jobs:
+  shared-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Quality - Shared Lint
+        run: |
+          echo Shared Lint
+
+  tests-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Quality - Tests Lint
+        run: |
+          echo Tests Lint
+
+  apis-lint:
+     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Quality - Apis Lint
+        run: |
+          echo Apis Lint
+
+  apps-lint:
+     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Quality - Apps Lint
+        run: |
+          echo Apps Lint
