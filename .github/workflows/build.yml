@@ -7,7 +7,7 @@ name: Building Stage
 #       - completed
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   build:
