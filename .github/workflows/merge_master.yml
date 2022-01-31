@@ -1,3 +1,4 @@
+# Recipe triggered when merging to master
 name: Merge to Master
 
 on:
