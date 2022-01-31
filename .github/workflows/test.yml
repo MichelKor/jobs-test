@@ -1,3 +1,4 @@
+# Steps for testing
 name: Testing Stage
 
 on:
@@ -25,6 +26,9 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Unit Tests
         run: |
+          yarn -v
+          npm -v
+          node -v
           echo Apis Unit Tests
           echo Apps Unit Tests
           echo Shared Unit Tests
