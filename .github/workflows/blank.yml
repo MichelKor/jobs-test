@@ -27,6 +27,7 @@ jobs:
         
   unit-test:
     runs-on: ubuntu-latest
+    needs: code-quality
     steps:
       - uses: actions/checkout@v2
       - name: Unit Tests
@@ -37,6 +38,7 @@ jobs:
           
   coverage:
     runs-on: ubuntu-latest
+    needs: unit-test
     steps:
       - uses: actions/checkout@v2
       - name: Coverage
@@ -47,6 +49,7 @@ jobs:
           
   build:
     runs-on: ubuntu-latest
+    needs: coverage
     steps:
       - uses: actions/checkout@v2
       - name: Build
@@ -82,6 +85,7 @@ jobs:
           
   deploy:
     runs-on: ubuntu-latest
+    needs: [build, build-external, build-internal]
     steps:
       - uses: actions/checkout@v2
       - name: Deploy
