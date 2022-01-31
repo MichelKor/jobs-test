@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: One file example workflow
 
 on:
   push:
@@ -75,7 +75,7 @@ jobs:
           echo Build Bestelhulp
           echo Build Smart Life
           
-  build-interal:
+  build-internal:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
