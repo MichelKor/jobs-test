@@ -1,12 +1,5 @@
 name: Deploy Production Stage
 
-# on:
-# workflow_run:
-#   workflows: [Building Stage]
-#   branches: [main]
-#   types:
-#     - completed
-
 on:
   workflow_call:
 
